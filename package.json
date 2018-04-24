@@ -1,19 +1,16 @@
 {
-  "name": "randomNumberGenerator",
-  "version": "1.0.0",
-  "description": "",
-  "main": "randomNumberGenerator.js",
+  "name": "meetupLuckyWinnerGenerator",
+  "version": "0.0.1",
+  "description": "A simple package for generating lucky winners if there is a free coupon giveaway at a Meetup event!",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adnan Rahić",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^5.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
   }
 }
