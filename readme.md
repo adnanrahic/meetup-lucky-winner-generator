@@ -14,6 +14,7 @@ Install the module.
 $ npm i --save meetup-lucky-winner-generator
 ```
 
+Add this to the `app.js`.
 ```js
 const meetupLuckyWinnerGenerator = require('meetup-lucky-winner-generator');
 
