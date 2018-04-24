@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": [],
-  "author": "Adnan Rahić",
+  "keywords": ["meetup", "api", "generate", "winner"],
+  "author": "Adnan Rahić <ado.raha198@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
