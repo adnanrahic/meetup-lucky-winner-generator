@@ -1,16 +1,14 @@
 {
-  "name": "meetupLuckyWinnerGenerator",
-  "version": "0.0.1",
+  "name": "meetup-lucky-winner-generator",
+  "version": "0.0.3",
   "description": "A simple package for generating lucky winners if there is a free coupon giveaway at a Meetup event!",
-  "main": "app.js",
+  "main": "meetupLuckyWinnerGenerator.js",
   "scripts": {
-    "start": "node app.js"
   },
   "keywords": ["meetup", "api", "generate", "winner"],
   "author": "Adnan Rahić <ado.raha198@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
-    "dotenv": "^5.0.1"
+    "axios": "^0.18.0"
   }
 }

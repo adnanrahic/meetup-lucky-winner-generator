@@ -1,10 +1,11 @@
-require('dotenv').config();
 const meetupLuckyWinnerGenerator = require('./meetupLuckyWinnerGenerator');
 
 // Set the options for what meetup and event you want to get the lucky winner
+require('dotenv').config();
 const options = { 
-  meetup: 'sarajevo-openweb-meetup', // Add your Meetup here! 
-  eventId: 247769521 // Add your event ID here!
+  meetup: process.env.MEETUP, // Add your Meetup here! 
+  eventId: process.env.EVENT_ID, // Add your event ID here!
+  apiKey: process.env.API_KEY // Add your API KEY!
 };
 
 // Generate the lucky winner with the given options

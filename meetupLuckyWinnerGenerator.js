@@ -5,9 +5,10 @@ const axios = require('axios');
  * @param {Object} options 
  * @param {String} options.meetup
  * @param {Number} options.eventId
+ * @param {Number} options.apiKey
  */
 module.exports.generateOneLuckyWinner = (options) => {
-  return axios.get(`https://api.meetup.com/${options.meetup}/events/${options.eventId}/rsvps?key=${process.env.API_KEY}`)
+  return axios.get(`https://api.meetup.com/${options.meetup}/events/${options.eventId}/rsvps?key=${options.apiKey}`)
     .then(response => {
       const attendees = response.data;
       const numberOfAttendees = attendees.length;
