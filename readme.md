@@ -4,13 +4,13 @@ A simple package for generating lucky winners if there is a free coupon giveaway
 ## Usage
 - install `dotenv`
 - add a `.env` file
-- add your API_KEY (can get it here), MEETUP name, and EVENT_ID to the `.env` file
+- add your API_KEY (can get it [here](https://secure.meetup.com/meetup_api/key/)), MEETUP name, and EVENT_ID to the `.env` file
 - require the module in your files
 - call the `generateOneLuckyWinner` method with the appropriate options to get one name returned
 
 ## Sample
 ```js
-const meetupLuckyWinnerGenerator = require('./meetupLuckyWinnerGenerator');
+const meetupLuckyWinnerGenerator = require('meetup-lucky-winner-generator');
 
 // Set the options for what meetup and event you want to get the lucky winner
 require('dotenv').config();
