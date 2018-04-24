@@ -9,6 +9,11 @@ A simple package for generating lucky winners if there is a free coupon giveaway
 - call the `generateOneLuckyWinner` method with the appropriate options to get one name returned
 
 ## Sample
+Install the module.
+```bash
+$ npm i --save meetup-lucky-winner-generator
+```
+
 ```js
 const meetupLuckyWinnerGenerator = require('meetup-lucky-winner-generator');
 
