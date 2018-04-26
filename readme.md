@@ -1,5 +1,5 @@
 # Meetup Lucky Winner Generator
-A simple package for generating lucky winners if there is a free coupon giveaway at a Meetup event!
+A simple package with zero dependencies for generating lucky winners if there is a free coupon giveaway at a Meetup event!
 
 ## Usage
 - install `dotenv`
