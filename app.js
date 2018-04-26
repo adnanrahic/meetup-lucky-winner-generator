@@ -13,3 +13,13 @@ meetupLuckyWinnerGenerator
   .generateOneLuckyWinner(options)
   .then(luckyWinner => console.log(`Today's lucky winner is: ${luckyWinner.member.name}!`))
   .catch(err => console.error('Invalid options.\n', err.stack));
+
+meetupLuckyWinnerGenerator
+  .generateThreeLuckyWinners(options)
+  .then(luckyWinners => {
+    console.log('Today\'s lucky winners are:');
+    luckyWinners.forEach(e => {
+      console.log(' - ' + e.member.name);
+    });
+  })
+  .catch(err => console.error('Invalid options.\n', err.stack));

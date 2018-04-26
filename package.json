@@ -10,7 +10,6 @@
   "author": "Adnan Rahić <ado.raha198@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
     "dotenv": "^5.0.1"
   }
 }
