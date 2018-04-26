@@ -6,10 +6,16 @@
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": ["meetup", "api", "generate", "winner"],
+  "keywords": [
+    "meetup",
+    "api",
+    "generate",
+    "winner"
+  ],
   "author": "Adnan Rahić <ado.raha198@gmail.com>",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "dotenv": "^5.0.1"
   }
 }
