@@ -6,7 +6,7 @@ A simple package with zero dependencies for generating lucky winners if there is
 - add a `.env` file
 - add your API_KEY (can get it [here](https://secure.meetup.com/meetup_api/key/)), MEETUP name, and EVENT_ID to the `.env` file
 - require the module in your files
-- call the `generateOneLuckyWinner` method with the appropriate options to get one name returned
+- call the `generateOneLuckyWinner` or `generateThreeLuckyWinners` method with the appropriate options to get one name returned
 
 ## Sample
 Install the module.
@@ -30,5 +30,16 @@ const options = {
 meetupLuckyWinnerGenerator
   .generateOneLuckyWinner(options)
   .then(luckyWinner => console.log(`Today's lucky winner is: ${luckyWinner.member.name}!`))
+  .catch(err => console.error('Invalid options.\n', err.stack));
+
+// Generate three lucky winners immediately
+meetupLuckyWinnerGenerator
+  .generateThreeLuckyWinners(options)
+  .then(luckyWinners => {
+    console.log('Today\'s lucky winners are:');
+    luckyWinners.forEach(e => {
+      console.log(' - ' + e.member.name);
+    });
+  })
   .catch(err => console.error('Invalid options.\n', err.stack));
 ```
