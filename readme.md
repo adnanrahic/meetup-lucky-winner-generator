@@ -4,6 +4,9 @@ A simple package with zero dependencies for generating lucky winners if there is
 ## Code
 Check out the code on [GitHub](https://github.com/adnanrahic/meetup-lucky-winner-generator)!
 
+## Website
+Check out [the website](http://meetup-lucky-winner-generator.surge.sh/) for quick use.
+
 ## Usage
 - install `dotenv`
 - add a `.env` file
