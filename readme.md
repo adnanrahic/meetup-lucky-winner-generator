@@ -1,6 +1,9 @@
 # Meetup Lucky Winner Generator
 A simple package with zero dependencies for generating lucky winners if there is a free coupon giveaway at a Meetup event!
 
+## Website
+Check out [the website](http://meetup-lucky-winner-generator.surge.sh/) for quick use.
+
 ## Usage
 - install `dotenv`
 - add a `.env` file
