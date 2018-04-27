@@ -1,6 +1,6 @@
 {
   "name": "meetupLuckyWinnerGenerator",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "A simple package for generating lucky winners if there is a free coupon giveaway at a Meetup event!",
   "main": "app.js",
   "scripts": {
