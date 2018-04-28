@@ -7,25 +7,23 @@ const https = require('https');
  * @param {Number} options.eventId
  * @param {Number} options.apiKey
  */
-module.exports.generateOneLuckyWinner = (options) => {
-  return getMeetupEventRSVPs(options)
-    .then(attendees => {
-      const numberOfAttendees = attendees.length;
-      return attendees[Math.ceil(Math.random() * numberOfAttendees)];
-    });
-};
+module.exports.generateOneLuckyWinner = (options) =>
+  getMeetupEventRSVPs(options)
+    .then(filterOutHosts)
+    .then(filterOutOneLuckyWinner)
+    .catch(handleError);
 
-module.exports.generateThreeLuckyWinners = (options) => {
-  return getMeetupEventRSVPs(options)
-    .then(attendees => {
-      const numberOfAttendees = attendees.length;
-      const luckyWinners = [];
-      for (let index = 0; index < 3; index++) {
-        luckyWinners.push(attendees[Math.ceil(Math.random() * numberOfAttendees)]);
-      }
-      return luckyWinners;
-    });
-};
+module.exports.generateThreeLuckyWinners = (options) =>
+  getMeetupEventRSVPs(options)
+    .then(filterOutHosts)
+    .then(filterOutThreeLuckyWinners)
+    .catch(handleError);
+
+module.exports.generateCustomLuckyWinners = (options) =>
+  getMeetupEventRSVPs(options)
+    .then(filterOutHosts)
+    .then(attendees => filterOutCustomLuckyWinners(attendees, options.numberOfWinners))
+    .catch(handleError);
 
 
 /**
@@ -71,4 +69,31 @@ function getMeetupEventRSVPs(options) {
     });
 
   });
+}
+
+/**
+ * Helpers
+ */
+function filterOutHosts(attendees) {
+  return attendees.filter(a => !a.member.event_context.host);
+}
+function filterOutOneLuckyWinner(attendees) {
+  return attendees[Math.ceil(Math.random() * attendees.length)];
+}
+function filterOutThreeLuckyWinners(attendees) {
+  const threeLuckyWinners = [];
+  for (let i = 0; i < 3; i++)
+    threeLuckyWinners.push(attendees.splice(Math.ceil(Math.random() * attendees.length), 1).pop());
+  return threeLuckyWinners;
+}
+function filterOutCustomLuckyWinners(attendees, numberOfWinners) {
+  if (numberOfWinners > attendees) return Promise.reject(new Error('The number of winners needs to be smaller than the attendees present.'));
+  const customLuckyWinners = [];
+  for (let i = 0; i < numberOfWinners; i++)
+    customLuckyWinners.push(attendees.splice(Math.ceil(Math.random() * attendees.length), 1).pop());
+  return customLuckyWinners;
+}
+function handleError(err) {
+  console.error(err.stack);
+  return Promise.reject(e.message);
 }
