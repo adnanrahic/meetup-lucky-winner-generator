@@ -12,6 +12,10 @@
     "winner"
   ],
   "author": "Adnan Rahić <ado.raha198@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adnanrahic/meetup-lucky-winner-generator"
+  },
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

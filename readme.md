@@ -1,9 +1,6 @@
 # Meetup Lucky Winner Generator
 A simple package with zero dependencies for generating lucky winners if there is a free coupon giveaway at a Meetup event!
 
-## Code
-Check out the code on [GitHub](https://github.com/adnanrahic/meetup-lucky-winner-generator)!
-
 ## Website
 Check out [the website](http://meetup-lucky-winner-generator.surge.sh/) for quick use.
 
