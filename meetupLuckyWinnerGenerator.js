@@ -5,6 +5,7 @@ const https = require('https');
  * @param {Object} options 
  * @param {String} options.meetup
  * @param {Number} options.eventId
+ * @param {Number} options.apiKey
  */
 module.exports.generateOneLuckyWinner = (options) => {
   return getMeetupEventRSVPs(options)
