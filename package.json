@@ -1,8 +1,8 @@
 {
-  "name": "meetupLuckyWinnerGenerator",
-  "version": "0.0.9",
-  "description": "A simple package for generating lucky winners if there is a free coupon giveaway at a Meetup event!",
-  "main": "app.js",
+  "name": "meetup-lucky-winner-generator",
+  "version": "0.0.11",
+  "description": "A simple package with zero dependencies for generating lucky winners if there is a free coupon giveaway at a Meetup event!",
+  "main": "meetupLuckyWinnerGenerator.js",
   "scripts": {
     "start": "node app.js"
   },
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/adnanrahic/meetup-lucky-winner-generator"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "dotenv": "^5.0.1"

@@ -1,3 +1,7 @@
+![dependencies](https://img.shields.io/badge/dependencies-0-green.svg)
+![contributors](https://img.shields.io/badge/contributors-1-blue.svg)
+![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 # Meetup Lucky Winner Generator
 A simple package with zero dependencies for generating lucky winners if there is a free coupon giveaway at a Meetup event!
 
