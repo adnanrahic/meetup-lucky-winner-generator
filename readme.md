@@ -9,12 +9,12 @@ A simple package with zero dependencies for generating lucky winners if there is
 Check out [the website](http://meetup-lucky-winner-generator.surge.sh/) for quick use.
 
 ## Usage
-- install `dotenv`
-- add a `.env` file
-- add your API_KEY (can get it [here](https://secure.meetup.com/meetup_api/key/)), MEETUP, EVENT_ID, and NUMBER_OF_WINNERS to the `.env` file
-- _note: all values can be added without the use of a `.env` file, but for security reasons, try to keep your `API_KEY` in the `.env`_
-- require the module in your files
-- call the `generateOneLuckyWinner` or `generateThreeLuckyWinners` method with the appropriate options to get one name returned
+- Install `dotenv`
+- Add a `.env` file
+- Add your API_KEY (can get it [here](https://secure.meetup.com/meetup_api/key/)), MEETUP, EVENT_ID, and NUMBER_OF_WINNERS to the `.env` file
+- _Note: all values can be added without the use of a `.env` file, but for security reasons, try to keep your `API_KEY` in the `.env`_
+- Require the module in your files
+- Call the `generateOneLuckyWinner` or `generateThreeLuckyWinners` method with the appropriate options to get one name returned
 
 ## Sample
 Install the module.
