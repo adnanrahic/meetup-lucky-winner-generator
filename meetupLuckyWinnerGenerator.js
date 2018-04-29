@@ -93,7 +93,9 @@ function filterOutThreeLuckyWinners(attendees) {
   return threeLuckyWinners;
 }
 function filterOutCustomLuckyWinners(attendees, numberOfWinners) {
-  if (numberOfWinners > attendees) return Promise.reject(new Error('The number of winners needs to be smaller than the attendees present.'));
+  if (numberOfWinners > attendees) 
+    return Promise.reject(new Error('The number of winners needs to be less than the attendees present.'));
+
   const customLuckyWinners = [];
   for (let i = 0; i < numberOfWinners; i++)
     customLuckyWinners.push(attendees.splice(Math.ceil(Math.random() * attendees.length), 1).pop());
