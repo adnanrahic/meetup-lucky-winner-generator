@@ -1,6 +1,7 @@
-![dependencies](https://img.shields.io/badge/dependencies-0-green.svg)
+![dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)
 ![contributors](https://img.shields.io/badge/contributors-1-blue.svg)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+![license](https://img.shields.io/badge/eslint-default-yellowgreen.svg)
 
 # Meetup Lucky Winner Generator
 A simple package with zero dependencies for generating lucky winners if there is a free coupon giveaway at a Meetup event!
@@ -24,7 +25,7 @@ $ npm i --save meetup-lucky-winner-generator
 
 Add this to the `app.js`.
 ```js
-const meetupLuckyWinnerGenerator = require('./meetupLuckyWinnerGenerator'); // replace with require('meetup-lucky-winner-generator');
+const meetupLuckyWinnerGenerator = require('meetup-lucky-winner-generator');
 
 // Set the options for what meetup and event you want to get the lucky winner
 require('dotenv').config();
@@ -37,11 +38,13 @@ const options = {
 
 // Generate the lucky winner with the given options
 
+// One winner
 meetupLuckyWinnerGenerator
   .generateOneLuckyWinner(options)
   .then(luckyWinner => console.log(`Today's lucky winner is ${luckyWinner.member.name}!`))
-  .catch(err => console.error('Invalid options.\n', err.stack));
+  .catch(err => console.error('Invalid options: ', err.message));
 
+// Three winners
 meetupLuckyWinnerGenerator
   .generateThreeLuckyWinners(options)
   .then(luckyWinners => {
@@ -50,8 +53,9 @@ meetupLuckyWinnerGenerator
       console.log(' - ' + e.member.name);
     });
   })
-  .catch(err => console.error('Invalid options.\n', err.stack));
+  .catch(err => console.error('Invalid options: ', err.message));
 
+// Custom number of winners
 meetupLuckyWinnerGenerator
   .generateCustomLuckyWinners(options)
   .then(luckyWinners => {
@@ -60,5 +64,5 @@ meetupLuckyWinnerGenerator
       console.log(' - ' + e.member.name);
     });
   })
-  .catch(err => console.error('Invalid options.\n', err.stack));
+  .catch(err => console.error('Invalid options: ', err.message));
 ```

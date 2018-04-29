@@ -1,4 +1,6 @@
-const meetupLuckyWinnerGenerator = require('./meetupLuckyWinnerGenerator'); // replace with require('meetup-lucky-winner-generator');
+const meetupLuckyWinnerGenerator = require('./meetupLuckyWinnerGenerator'); 
+// replace with:
+// const meetupLuckyWinnerGenerator = require('meetup-lucky-winner-generator');
 
 // Set the options for what meetup and event you want to get the lucky winner
 require('dotenv').config();
