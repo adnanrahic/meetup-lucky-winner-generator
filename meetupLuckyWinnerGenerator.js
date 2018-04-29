@@ -32,25 +32,31 @@ module.exports.generateCustomLuckyWinners = (options) =>
  */
 function getMeetupEventRSVPs(options) {
   return new Promise(function (resolve, reject) {
+    
+    // interpolate the endpoint with the options data
+    const endpoint = `https://api.meetup.com/${options.meetup}/events/${options.eventId}/rsvps?key=${options.apiKey}`;
 
-    https.get(`https://api.meetup.com/${options.meetup}/events/${options.eventId}/rsvps?key=${options.apiKey}`, (res) => {
+    // fetch data with GET request
+    https.get(endpoint, (res) => {
       const { statusCode } = res;
       const contentType = res.headers['content-type'];
 
-      let error;
+      // handle 4xx and 5xx errors
+      let err;
       if (statusCode !== 200) {
-        error = new Error('Request Failed.\n' +
+        err = new Error('Request Failed.\n' +
           `Status Code: ${statusCode}`);
       } else if (!/^application\/json/.test(contentType)) {
-        error = new Error('Invalid content-type.\n' +
+        err = new Error('Invalid content-type.\n' +
           `Expected application/json but received ${contentType}`);
       }
-      if (error) {
-        console.error(error.message);
+      if (err) {
+        console.error(err.message);
         res.resume();
-        return reject(error);
+        return reject(err);
       }
 
+      // parse data on success
       res.setEncoding('utf8');
       let rawData = '';
       res.on('data', (chunk) => { rawData += chunk; });
@@ -58,14 +64,14 @@ function getMeetupEventRSVPs(options) {
         try {
           const parsedData = JSON.parse(rawData);
           resolve(parsedData);
-        } catch (e) {
-          console.error(e.message);
-          reject(e);
+        } catch (err) {
+          console.error(err.message);
+          reject(err);
         }
       });
-    }).on('error', (e) => {
-      console.error(`Got error: ${e.message}`);
-      reject(e);
+    }).on('error', (err) => {
+      console.error(`Got error: ${err.message}`);
+      reject(err);
     });
 
   });
@@ -95,5 +101,5 @@ function filterOutCustomLuckyWinners(attendees, numberOfWinners) {
 }
 function handleError(err) {
   console.error(err.stack);
-  return Promise.reject(e.message);
+  return Promise.reject(err);
 }

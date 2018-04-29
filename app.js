@@ -14,7 +14,7 @@ const options = {
 meetupLuckyWinnerGenerator
   .generateOneLuckyWinner(options)
   .then(luckyWinner => console.log(`Today's lucky winner is ${luckyWinner.member.name}!`))
-  .catch(err => console.error('Invalid options.\n', err.stack));
+  .catch(err => console.error('Invalid options: ', err.message));
 
 meetupLuckyWinnerGenerator
   .generateThreeLuckyWinners(options)
@@ -24,7 +24,7 @@ meetupLuckyWinnerGenerator
       console.log(' - ' + e.member.name);
     });
   })
-  .catch(err => console.error('Invalid options.\n', err.stack));
+  .catch(err => console.error('Invalid options: ', err.message));
 
 meetupLuckyWinnerGenerator
   .generateCustomLuckyWinners(options)
@@ -34,4 +34,4 @@ meetupLuckyWinnerGenerator
       console.log(' - ' + e.member.name);
     });
   })
-  .catch(err => console.error('Invalid options.\n', err.stack));
+  .catch(err => console.error('Invalid options: ', err.message));
